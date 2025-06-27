@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf09c69de57df54c95d6b2562c9ac6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridRadius: 20
+  gridRadius: 80
   hexPrefab: {fileID: 919132149155446097, guid: 0ed8b324ec740084da930e0a0a5d932a, type: 3}
   pathMaterial: {fileID: 2100000, guid: 08d24121249c8f34ca9da1a8009f4994, type: 2}
   defaultMaterial: {fileID: 2100000, guid: c8c9aa0f97c75144c87bb3a80e35b892, type: 2}

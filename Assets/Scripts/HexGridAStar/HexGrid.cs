@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HexGrid
 {
-    public List<Vector2Int> nodes = new List<Vector2Int>();
+    public List<HexNode> nodes = new List<HexNode>();
 
     public HexGrid(int radius)
     {
@@ -14,7 +14,7 @@ public class HexGrid
             int r2 = Mathf.Min(radius, -q + radius);
             for (int r = r1; r <= r2; r++)
             {
-                nodes.Add(new Vector2Int(q, r));
+                nodes.Add(new HexNode(new Vector2Int(q, r)));
             }
         }
 

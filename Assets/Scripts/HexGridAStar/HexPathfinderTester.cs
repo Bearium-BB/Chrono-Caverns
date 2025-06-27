@@ -1,5 +1,6 @@
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class HexPathfinderTester : MonoBehaviour
@@ -36,7 +37,7 @@ public class HexPathfinderTester : MonoBehaviour
     {
 
         grid = new HexGrid(gridRadius);
-        GeneratedAStarNodes(gridRadius);
+        GeneratedAStarNodes();
 
         // Randomly assign obstacles
         //System.Random rng = new System.Random();
@@ -64,11 +65,11 @@ public class HexPathfinderTester : MonoBehaviour
         // Instantiate hex tiles and set colors
         foreach (var node in grid.nodes)
         {
-            Vector3 pos = HexToWorld(node);
+            Vector3 pos = HexToWorld(node.coord);
             var hexGO = Instantiate(hexPrefab, new(pos.x, 0, pos.z), Quaternion.Euler(90, 0, 0), transform);
 
             // Start building the name
-            string name = $"Hex_{node.x}_{node.y}";
+            string name = $"Hex_{node.coord.x}_{node.coord.y}";
 
             // Add descriptive tags to the name
             //if (!node.isWalkable) name += "_Blocked";
@@ -87,7 +88,7 @@ public class HexPathfinderTester : MonoBehaviour
             //else
             //    renderer.material = defaultMaterial;
 
-            hexObjects[node] = hexGO;
+            hexObjects[node.coord] = hexGO;
         }
 
         // Find path
@@ -127,7 +128,6 @@ public class HexPathfinderTester : MonoBehaviour
     }
 
 
-    // Convert axial hex coordinates to world position (pointy topped)
     Vector3 HexToWorld(Vector2Int hex)
     {
         float x = Mathf.Sqrt(3f) * (hex.x + hex.y / 2f);
@@ -135,18 +135,13 @@ public class HexPathfinderTester : MonoBehaviour
         return new Vector3(x, 0, z);
     }
 
-    public void GeneratedAStarNodes(int radius)
+    public void GeneratedAStarNodes()
     {
-        for (int q = -radius; q <= radius; q++)
+        foreach (var gridNode in grid.nodes)
         {
-            int r1 = Mathf.Max(-radius, -q - radius);
-            int r2 = Mathf.Min(radius, -q + radius);
-            for (int r = r1; r <= r2; r++)
-            {
-                HexNode node = new HexNode(new Vector2Int(q, r));
-                HexNodeAStar nodeA = new HexNodeAStar(node);
-                aStarNodes.Add(new Vector2Int(q, r), nodeA);
-            }
+            HexNode node = new HexNode(gridNode.coord);
+            HexNodeAStar aNode = new HexNodeAStar(node);
+            aStarNodes.Add(gridNode.coord, aNode);
         }
 
         foreach (var node in aStarNodes.Values)
