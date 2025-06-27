@@ -36,7 +36,7 @@ public class HexPathfinderTester : MonoBehaviour
     {
 
         grid = new HexGrid(gridRadius);
-        GeneratedNeighbors(gridRadius);
+        GeneratedAStarNodes(gridRadius);
 
         // Randomly assign obstacles
         //System.Random rng = new System.Random();
