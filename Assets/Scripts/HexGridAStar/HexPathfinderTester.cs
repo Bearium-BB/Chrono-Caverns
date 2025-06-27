@@ -11,11 +11,12 @@ public class HexPathfinderTester : MonoBehaviour
 
     HexGrid grid;
     Dictionary<Vector2Int, GameObject> hexObjects = new Dictionary<Vector2Int, GameObject>();
-    Dictionary<Vector2Int, HexNode> nodes = new Dictionary<Vector2Int, HexNode>();
+    //The vector 2 int is there just for searching but technically not needed 
+    Dictionary<Vector2Int, HexNodeAStar> aStarNodes = new Dictionary<Vector2Int, HexNodeAStar>();
 
-    HexNode startNode;
-    HexNode goalNode;
-    List<HexNode> path;
+    HexNodeAStar startNode;
+    HexNodeAStar goalNode;
+    List<HexNodeAStar> path;
 
     [Range(0f, 1f)]
     public float obstacleChance = 0.2f;
@@ -54,11 +55,11 @@ public class HexPathfinderTester : MonoBehaviour
 
 
         // Make sure start and goal are always walkable
-        startNode = nodes[new Vector2Int(5,5)];
-        goalNode = nodes[new Vector2Int(gridRadius - 1, -gridRadius + 1)];
+        startNode = aStarNodes[new Vector2Int(-10,7)];
+        goalNode = aStarNodes[new Vector2Int(gridRadius - 1, -gridRadius + 1)];
 
-        startNode.isWalkable = true;
-        goalNode.isWalkable = true;
+        startNode.node.isWalkable = true;
+        goalNode.node.isWalkable = true;
 
         // Instantiate hex tiles and set colors
         foreach (var node in grid.nodes)
@@ -101,9 +102,9 @@ public class HexPathfinderTester : MonoBehaviour
         {
             var hexGO = kvp.Value;
             var renderer = hexGO.GetComponent<Renderer>();
-            var node = nodes[kvp.Key];
+            var node = aStarNodes[kvp.Key];
 
-            if (!node.isWalkable)
+            if (!node.node.isWalkable)
             {
                 renderer.material.color = Color.red;
             }
@@ -118,9 +119,9 @@ public class HexPathfinderTester : MonoBehaviour
         foreach (var node in path)
         {
 
-            if (!node.isWalkable) continue; // skip obstacles
+            if (!node.node.isWalkable) continue; // skip obstacles
 
-            var renderer = hexObjects[node.hexCoord].GetComponent<Renderer>();
+            var renderer = hexObjects[node.node.coord].GetComponent<Renderer>();
             renderer.material = pathMaterial;
         }
     }
@@ -134,7 +135,7 @@ public class HexPathfinderTester : MonoBehaviour
         return new Vector3(x, 0, z);
     }
 
-    public void GeneratedNeighbors(int radius)
+    public void GeneratedAStarNodes(int radius)
     {
         for (int q = -radius; q <= radius; q++)
         {
@@ -142,19 +143,20 @@ public class HexPathfinderTester : MonoBehaviour
             int r2 = Mathf.Min(radius, -q + radius);
             for (int r = r1; r <= r2; r++)
             {
-                var node = new HexNode(new Vector2Int(q, r));
-                nodes.Add(new Vector2Int(q, r), node);
+                HexNode node = new HexNode(new Vector2Int(q, r));
+                HexNodeAStar nodeA = new HexNodeAStar(node);
+                aStarNodes.Add(new Vector2Int(q, r), nodeA);
             }
         }
 
-        foreach (var node in nodes.Values)
+        foreach (var node in aStarNodes.Values)
         {
             foreach (var dir in directions)
             {
-                Vector2Int neighborCoord = node.hexCoord + dir;
-                if (nodes.ContainsKey(neighborCoord))
+                Vector2Int neighborCoord = node.node.coord + dir;
+                if (aStarNodes.ContainsKey(neighborCoord))
                 {
-                    node.neighbors.Add(nodes[neighborCoord]);
+                    node.neighbors.Add(aStarNodes[neighborCoord]);
                 }
             }
         }

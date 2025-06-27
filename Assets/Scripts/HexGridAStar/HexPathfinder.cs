@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HexPathfinder
 {
-    // Heuristic: hex distance (Manhattan distance in axial coordinates)
     static float Heuristic(Vector2Int a, Vector2Int b)
     {
         return (Mathf.Abs(a.x - b.x)
@@ -12,19 +11,19 @@ public class HexPathfinder
               + Mathf.Abs(a.y - b.y)) / 2f;
     }
 
-    public static List<HexNode> FindPath(HexNode start, HexNode goal, bool canFly = false, bool canJump = true)
+    public static List<HexNodeAStar> FindPath(HexNodeAStar start, HexNodeAStar goal, bool canFly = false, bool canJump = true)
     {
-        var openSet = new List<HexNode> { start };
-        var closedSet = new HashSet<HexNode>();
+        var openSet = new List<HexNodeAStar> { start };
+        var closedSet = new HashSet<HexNodeAStar>();
 
         start.gCost = 0;
-        start.hCost = Heuristic(start.hexCoord, goal.hexCoord);
+        start.hCost = Heuristic(start.node.coord, goal.node.coord);
         start.parent = null;
 
         while (openSet.Count > 0)
         {
             // Get node with lowest fCost
-            HexNode current = openSet.OrderBy(n => n.fCost).First();
+            HexNodeAStar current = openSet.OrderBy(n => n.fCost).First();
 
             if (current == goal)
             {
@@ -36,7 +35,6 @@ public class HexPathfinder
 
             foreach (var neighbor in current.neighbors)
             {
-                Debug.Log("Start neighbor");
 
                 if (!IsTraversable(neighbor, current, canFly, canJump) || closedSet.Contains(neighbor))
                     continue;
@@ -46,27 +44,23 @@ public class HexPathfinder
                 if (!openSet.Contains(neighbor) || tentativeGCost < neighbor.gCost)
                 {
                     neighbor.gCost = tentativeGCost;
-                    neighbor.hCost = Heuristic(neighbor.hexCoord, goal.hexCoord);
+                    neighbor.hCost = Heuristic(neighbor.node.coord, goal.node.coord);
                     neighbor.parent = current;
 
                     if (!openSet.Contains(neighbor))
                         openSet.Add(neighbor);
                 }
             }
-            Debug.Log("End neighbor");
-            Debug.Log(openSet.Count);
-
-
         }
 
         // No path found
         return null;
     }
 
-    private static List<HexNode> RetracePath(HexNode start, HexNode goal)
+    private static List<HexNodeAStar> RetracePath(HexNodeAStar start, HexNodeAStar goal)
     {
-        List<HexNode> path = new List<HexNode>();
-        HexNode current = goal;
+        List<HexNodeAStar> path = new List<HexNodeAStar>();
+        HexNodeAStar current = goal;
 
         while (current != start)
         {
@@ -79,30 +73,30 @@ public class HexPathfinder
         return path;
     }
 
-    private static bool IsTraversable(HexNode node, HexNode fromNode, bool canFly, bool canJump)
+    private static bool IsTraversable(HexNodeAStar node, HexNodeAStar fromNode, bool canFly, bool canJump)
     {
-        if (!node.isWalkable)
+        if (!node.node.isWalkable)
             return false;
 
-        int heightDiff = Mathf.Abs(node.heightLevel - fromNode.heightLevel);
+        int heightDiff = Mathf.Abs(node.node.heightLevel - fromNode.node.heightLevel);
 
-        if (node.isFlyOnly && !canFly)
+        if (node.node.isFlyOnly && !canFly)
             return false;
 
-        if ((node.isCliff || fromNode.isCliff) && heightDiff <= 1)
+        if ((node.node.isCliff || fromNode.node.isCliff) && heightDiff <= 1)
         {
             if (canJump)
                 return true;
             return false;
         }
 
-        if (node.isRamp || fromNode.isRamp)
+        if (node.node.isRamp || fromNode.node.isRamp)
         {
             return heightDiff <= 1;
         }
 
         // Normal height difference block (optional):
-        if (Mathf.Abs(node.heightLevel - fromNode.heightLevel) > 0)
+        if (Mathf.Abs(node.node.heightLevel - fromNode.node.heightLevel) > 0)
             return false;
 
         return true;

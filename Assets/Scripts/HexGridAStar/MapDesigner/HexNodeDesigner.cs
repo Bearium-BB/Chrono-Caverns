@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class HexNodeDesigner : MonoBehaviour
 {
-    public HexNode HexNode;
+    public HexNodeAStar HexNode;
 
     public bool isWalkable = true;
     public bool isRamp;
@@ -25,13 +25,13 @@ public class HexNodeDesigner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            HexNode.isWalkable = isWalkable;
-            HexNode.isRamp = isRamp;
-            HexNode.isCliff = isCliff;
-            HexNode.isFlyOnly = isFlyOnly;
-            HexNode.heightLevel = heightLevel;
+            HexNode.node.isWalkable = isWalkable;
+            HexNode.node.isRamp = isRamp;
+            HexNode.node.isCliff = isCliff;
+            HexNode.node.isFlyOnly = isFlyOnly;
+            HexNode.node.heightLevel = heightLevel;
 
-            Debug.Log(HexNode.isWalkable);
+            Debug.Log(HexNode.node.isWalkable);
             Debug.Log("Update");
         }
     }

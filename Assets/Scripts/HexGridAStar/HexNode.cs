@@ -1,33 +1,25 @@
-using Newtonsoft.Json;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HexNode
 {
-    public Vector2Int hexCoord;
-    [JsonIgnore]
-    public List<HexNode> neighbors = new List<HexNode>();
+    public Vector2Int coord;
 
-    // A* variables
-    public float gCost;
-    public float hCost;
-    public float fCost => gCost + hCost;
-    [JsonIgnore]
-    public HexNode parent;
-
-    public bool isWalkable = true;
-
-    // Terrain types
+    public bool isWalkable;
     public bool isRamp;
     public bool isCliff;
     public bool isFlyOnly;
     public int heightLevel;
-
     public bool isJumpable => isCliff && heightLevel <= 1;
 
-    public HexNode(Vector2Int coord)
+    public HexNode(Vector2Int coord, bool isWalkable = true, bool isRamp = false, bool isCliff = false, bool isFlyOnly = false, int heightLevel = 0)
     {
-        hexCoord = coord;
-        isWalkable = true;
+        this.coord = coord;
+        this.isWalkable = isWalkable;
+        this.isRamp = isRamp;
+        this.isCliff = isCliff;
+        this.isFlyOnly = isFlyOnly;
+        this.heightLevel = heightLevel;
     }
 }
