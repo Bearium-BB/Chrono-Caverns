@@ -3,17 +3,7 @@ using UnityEngine;
 
 public class HexGrid
 {
-    public Dictionary<Vector2Int, HexNode> nodes = new Dictionary<Vector2Int, HexNode>();
-
-    static readonly Vector2Int[] directions = new Vector2Int[]
-    {
-        new Vector2Int(1, 0),
-        new Vector2Int(1, -1),
-        new Vector2Int(0, -1),
-        new Vector2Int(-1, 0),
-        new Vector2Int(-1, 1),
-        new Vector2Int(0, 1)
-    };
+    public List<Vector2Int> nodes = new List<Vector2Int>();
 
     public HexGrid(int radius)
     {
@@ -24,22 +14,21 @@ public class HexGrid
             int r2 = Mathf.Min(radius, -q + radius);
             for (int r = r1; r <= r2; r++)
             {
-                var node = new HexNode(new Vector2Int(q, r));
-                nodes[node.hexCoord] = node;
+                nodes.Add(new Vector2Int(q, r));
             }
         }
 
         // Link neighbors
-        foreach (var node in nodes.Values)
-        {
-            foreach (var dir in directions)
-            {
-                Vector2Int neighborCoord = node.hexCoord + dir;
-                if (nodes.ContainsKey(neighborCoord))
-                {
-                    node.neighbors.Add(nodes[neighborCoord]);
-                }
-            }
-        }
+        //foreach (var node in nodes.Values)
+        //{
+        //    foreach (var dir in directions)
+        //    {
+        //        Vector2Int neighborCoord = node.hexCoord + dir;
+        //        if (nodes.ContainsKey(neighborCoord))
+        //        {
+        //            node.neighbors.Add(nodes[neighborCoord]);
+        //        }
+        //    }
+        //}
     }
 }

@@ -36,6 +36,8 @@ public class HexPathfinder
 
             foreach (var neighbor in current.neighbors)
             {
+                Debug.Log("Start neighbor");
+
                 if (!IsTraversable(neighbor, current, canFly, canJump) || closedSet.Contains(neighbor))
                     continue;
 
@@ -51,6 +53,9 @@ public class HexPathfinder
                         openSet.Add(neighbor);
                 }
             }
+            Debug.Log("End neighbor");
+            Debug.Log(openSet.Count);
+
 
         }
 
