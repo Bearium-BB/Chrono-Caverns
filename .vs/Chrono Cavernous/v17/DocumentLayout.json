@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Unity\\Chrono Cavernous\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|d:\\unity\\chrono cavernous\\assets\\scripts\\hexgridastar\\mapdesigner\\hexmaploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hexgridastar\\mapdesigner\\hexmaploader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|D:\\Unity\\Chrono Cavernous\\assets\\scripts\\hexgridastar\\hexgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hexgridastar\\hexgrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|D:\\Unity\\Chrono Cavernous\\assets\\scripts\\hexgridastar\\hexpathfindertester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hexgridastar\\hexpathfindertester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|d:\\unity\\chrono cavernous\\assets\\scripts\\hexgridastar\\mapdesigner\\hexmapdesigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hexgridastar\\mapdesigner\\hexmapdesigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|D:\\Unity\\Chrono Cavernous\\assets\\scripts\\hexgridastar\\hexnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hexgridastar\\hexnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|D:\\Unity\\Chrono Cavernous\\assets\\scripts\\hexgridastar\\mapdesigner\\hexnodedesigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hexgridastar\\mapdesigner\\hexnodedesigner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|D:\\Unity\\Chrono Cavernous\\assets\\scripts\\hexgridastar\\hexpathfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63B2CFCC-8C65-3648-DE14-ACED3166D99B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hexgridastar\\hexpathfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HexMapLoader.cs",
+              "DocumentMoniker": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapLoader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapLoader.cs",
+              "ToolTip": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapLoader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapLoader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T07:39:59.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HexNode.cs",
+              "DocumentMoniker": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexNode.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HexGridAStar\\HexNode.cs",
+              "ToolTip": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexNode.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HexGridAStar\\HexNode.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T07:19:52.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HexGrid.cs",
+              "DocumentMoniker": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexGrid.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HexGridAStar\\HexGrid.cs",
+              "ToolTip": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexGrid.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HexGridAStar\\HexGrid.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T02:28:09.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HexPathfinder.cs",
+              "DocumentMoniker": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexPathfinder.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HexGridAStar\\HexPathfinder.cs",
+              "ToolTip": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexPathfinder.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HexGridAStar\\HexPathfinder.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T02:34:09.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HexNodeDesigner.cs",
+              "DocumentMoniker": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexNodeDesigner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexNodeDesigner.cs",
+              "ToolTip": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexNodeDesigner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexNodeDesigner.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T01:35:09.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HexPathfinderTester.cs",
+              "DocumentMoniker": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexPathfinderTester.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HexGridAStar\\HexPathfinderTester.cs",
+              "ToolTip": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\HexPathfinderTester.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HexGridAStar\\HexPathfinderTester.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T01:29:27.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HexMapDesigner.cs",
+              "DocumentMoniker": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapDesigner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapDesigner.cs",
+              "ToolTip": "D:\\Unity\\Chrono Cavernous\\Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapDesigner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HexGridAStar\\MapDesigner\\HexMapDesigner.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T01:29:24.02Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
