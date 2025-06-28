@@ -31,4 +31,28 @@ public class HexGrid
         //    }
         //}
     }
+
+    public bool ContainsPosition(Vector2Int pos)
+    {
+        foreach (HexNode node in nodes)
+        {
+            if (node.coord == pos)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public HexNode GetNode(Vector2Int pos)
+    {
+        foreach (HexNode node in nodes)
+        {
+            if (node.coord == pos)
+            {
+                return node;
+            }
+        }
+        return null;
+    }
 }
